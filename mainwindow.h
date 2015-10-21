@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QFileDialog>
+#include <QListWidget>
 
 namespace Ui {
 class MainWindow;
