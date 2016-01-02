@@ -14,8 +14,13 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    myplayer.cpp \
+    settingdialog.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    myplayer.h \
+    settingdialog.h
 
-FORMS    += mainwindow.ui
+FORMS    += mainwindow.ui \
+    settingdialog.ui

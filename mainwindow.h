@@ -22,6 +22,10 @@ private slots:
 
     void on_browseBotton_clicked();
 
+    void on_pauseButton_clicked();
+
+    void on_settingsBotton_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -1,6 +1,8 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMediaPlayer>
+#include "myplayer.h"
+#include "settingdialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -16,12 +18,12 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_playBotton_clicked()
 {
-    QMediaPlayer* player;
-    player = new QMediaPlayer;
-    // ...
-    player->setMedia(QUrl::fromLocalFile(ui->tableWidget->item(ui->tableWidget->currentRow(), 3)->text()));
-    player->setVolume(50);
-    player->play();
+    myPlayer::getInstance()->play(ui->tableWidget->item(ui->tableWidget->currentRow(), 3)->text());
+}
+
+void MainWindow::on_pauseButton_clicked()
+{
+    myPlayer::getInstance()->pause();
 }
 
 void MainWindow::on_browseBotton_clicked()
@@ -46,4 +48,12 @@ void MainWindow::on_browseBotton_clicked()
             i++;
         }
     }
+}
+
+
+
+void MainWindow::on_settingsBotton_clicked()
+{
+    SettingDialog settings;
+    settings.exec();
 }
